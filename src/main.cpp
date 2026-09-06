@@ -5,6 +5,7 @@
 
 #include "RegistrarEntrada.h"
 #include "RegistrarSalida.h"
+#include "BuscarLugar.h"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ int main() {
     while (true) {
         cout << "> ";
         getline(cin, entrada);
+        
 
         // Se trabaja con una copia en mayusculas solo para comparar,
         // sin perder el texto original que el usuario tecleo.
