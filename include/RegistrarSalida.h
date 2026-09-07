@@ -1,4 +1,4 @@
-#ifndef REGISTRAR_SALIDA_H
+ifndef REGISTRAR_SALIDA_H
 #define REGISTRAR_SALIDA_H
 
 #include <string>
@@ -20,16 +20,14 @@ inline bool registrarSalida(string codigo, vector<string> &codigosActivos) {
         c = toupper(c);
     }
 
-    auto posicion = find(codigosActivos.begin(), codigosActivos.end(), codigo);
-
-    if (posicion != codigosActivos.end()) {
-        codigosActivos.erase(posicion);
-        cout << "Salida registrada para el codigo: " << codigo << endl;
-        return true;
-    }
-
-    cout << "Codigo no encontrado, no se pudo registrar la salida." << endl;
-    return false;
+    return find(codigosActivos.begin(), codigosActivos.end(), codigo) != codigosActivos.end();
 }
 
-#endif
+  bool registrarSalida(
+    string codigo,
+    vector<string> &codigosActivos,
+    vector<string> &tiposActivos,
+    vector<int> &lugaresActivos,
+    int lugaresSedan[],
+    int lugaresSUV[],
+    int lugaresCompacto[]
