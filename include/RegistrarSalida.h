@@ -31,3 +31,47 @@ inline bool registrarSalida(string codigo, vector<string> &codigosActivos) {
     int lugaresSedan[],
     int lugaresSUV[],
     int lugaresCompacto[]
+ // Buscar el codigo
+    for (int i = 0; i < codigosActivos.size(); i++) {
+
+        if (codigosActivos[i] == codigo) {
+
+            string tipo = tiposActivos[i];
+            int lugar = lugaresActivos[i];
+
+            // Liberar el lugar
+            if (tipo == "SEDAN") {
+                lugaresSedan[lugar - 1] = 0;
+            }
+
+            else if (tipo == "SUV") {
+                lugaresSUV[lugar - 1] = 0;
+            }
+
+            else if (tipo == "COMPACTO") {
+                lugaresCompacto[lugar - 1] = 0;
+            }
+
+            // Eliminar el vehiculo
+            codigosActivos.erase(codigosActivos.begin() + i);
+            tiposActivos.erase(tiposActivos.begin() + i);
+            lugaresActivos.erase(lugaresActivos.begin() + i);
+
+            cout << endl;
+            cout << "Salida registrada." << endl;
+            cout << "Codigo: " << codigo << endl;
+            cout << "Lugar " << lugar << " liberado." << endl;
+            cout << endl;
+
+            return true;
+        }
+    }
+
+    cout << endl;
+    cout << "Codigo no encontrado." << endl;
+    cout << endl;
+
+    return false;
+}
+
+#endif
