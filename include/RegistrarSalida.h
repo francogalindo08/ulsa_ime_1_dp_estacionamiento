@@ -1,4 +1,4 @@
-ifndef REGISTRAR_SALIDA_H
+#ifndef REGISTRAR_SALIDA_H
 #define REGISTRAR_SALIDA_H
 
 #include <string>
@@ -31,6 +31,8 @@ inline bool registrarSalida(string codigo, vector<string> &codigosActivos) {
     int lugaresSedan[],
     int lugaresSUV[],
     int lugaresCompacto[]
+)
+{
  // Buscar el codigo
     for (int i = 0; i < codigosActivos.size(); i++) {
 
